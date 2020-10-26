@@ -96,6 +96,15 @@ namespace Identity.Microservice
                     }
                     context.SaveChanges();
                 }
+
+                if (!context.ApiResources.Any())
+                {
+                    foreach (var resource in IdentityConfiguration.ApiResources)
+                    {
+                        context.ApiResources.Add(resource.ToEntity());
+                    }
+                    context.SaveChanges();
+                }
             }
         }
     }
