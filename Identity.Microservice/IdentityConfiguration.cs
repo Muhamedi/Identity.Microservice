@@ -55,10 +55,10 @@ namespace Identity.Microservice
             {
                 new Client
                 {
-                    ClientId = "cwm.client",
+                    ClientId = "books",
                     ClientName = "Client Credentials Client",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
-                    ClientSecrets = { new Secret("secret".Sha256()) },
+                    ClientSecrets = { new Secret("secret") },
                     AllowedScopes = { "myApi.read" }
                 },
             };
